@@ -12,9 +12,9 @@ export class AppComponent {
   show = false;
   constructor(private wiki: WikipediaService){}
   onTerm(term: string){
-    this.wiki.search(term).subscribe((response: any)=>{
-      this.pages = response.query.search;
-      console.log(response.query.search);
+    this.wiki.search(term).subscribe((pages)=>{
+      this.pages = pages;
+      console.log(pages);
 
     });
 
